@@ -3,612 +3,555 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
 <title>FN Pulse | Fortnite Nieuws</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
-html{
-    scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#070a12;
-    color:white;
-    overflow-x:hidden;
-    transition:.25s;
+font-family:Arial,Helvetica,sans-serif;
+background:#070a12;
+color:white;
+overflow-x:hidden;
+transition:.25s
 }
 
 body.light{
-    background:#eef2f7;
-    color:#111;
+background:#eef2f7;
+color:#111
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:72px;
-    z-index:1000;
-    background:rgba(5,8,16,.88);
-    backdrop-filter:blur(16px);
-    border-bottom:1px solid rgba(255,255,255,.08);
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:72px;
+z-index:1000;
+background:rgba(5,8,16,.9);
+backdrop-filter:blur(16px);
+border-bottom:1px solid rgba(255,255,255,.08)
 }
 
 .nav{
-    max-width:1300px;
-    height:72px;
-    margin:auto;
-    padding:0 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+max-width:1300px;
+height:72px;
+margin:auto;
+padding:0 20px;
+display:flex;
+align-items:center;
+justify-content:space-between
 }
 
 .logo{
-    font-size:27px;
-    font-weight:1000;
-    font-style:italic;
-    color:#3da5ff;
-    text-shadow:0 0 20px #087cff;
+font-size:27px;
+font-weight:1000;
+font-style:italic;
+color:#3da5ff;
+text-shadow:0 0 20px #087cff
 }
 
-.logo span{
-    color:white;
-}
+.logo span{color:white}
 
 nav{
-    display:flex;
-    align-items:center;
-    gap:25px;
+display:flex;
+gap:24px;
+align-items:center
 }
 
 nav a{
-    color:#dce5f3;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.2s;
+color:#dce5f3;
+text-decoration:none;
+font-weight:bold
 }
 
-nav a:hover{
-    color:#3da5ff;
-}
+nav a:hover{color:#3da5ff}
 
 .navButtons{
-    display:flex;
-    gap:8px;
+display:flex;
+gap:8px
 }
 
 .iconBtn{
-    width:42px;
-    height:42px;
-    border:0;
-    border-radius:11px;
-    background:#151b29;
-    color:white;
-    cursor:pointer;
-    font-size:18px;
+width:42px;
+height:42px;
+border:0;
+border-radius:11px;
+background:#151b29;
+color:white;
+cursor:pointer;
+font-size:18px
 }
 
-.menuBtn{
-    display:none;
-}
+.menuBtn{display:none}
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
-    min-height:720px;
-    padding:150px 20px 100px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-
-    background:
-    radial-gradient(circle at 50% 15%,#1a67bd 0%,#102c59 30%,#080b13 72%);
+min-height:720px;
+padding:150px 20px 100px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:
+radial-gradient(circle at 50% 15%,#1a67bd 0%,#102c59 30%,#080b13 72%)
 }
 
-.heroContent{
-    max-width:950px;
-}
+.heroContent{max-width:950px}
 
 .heroSmall{
-    color:#66b7ff;
-    font-weight:900;
-    letter-spacing:4px;
-    margin-bottom:15px;
+color:#66b7ff;
+font-weight:900;
+letter-spacing:4px;
+margin-bottom:15px
 }
 
 .hero h1{
-    font-size:clamp(48px,9vw,105px);
-    line-height:.88;
-    font-style:italic;
-    font-weight:1000;
-    text-transform:uppercase;
-    text-shadow:0 10px 40px #000;
+font-size:clamp(48px,9vw,105px);
+line-height:.88;
+font-style:italic;
+font-weight:1000;
+text-transform:uppercase;
+text-shadow:0 10px 40px #000
 }
 
-.hero h1 span{
-    color:#39a7ff;
-}
+.hero h1 span{color:#39a7ff}
 
 .hero p{
-    max-width:700px;
-    margin:30px auto;
-    color:#b9c5d8;
-    font-size:19px;
-    line-height:1.6;
+max-width:700px;
+margin:30px auto;
+color:#b9c5d8;
+font-size:19px;
+line-height:1.6
 }
 
 .mainBtn{
-    display:inline-block;
-    border:0;
-    padding:15px 28px;
-    border-radius:12px;
-    background:#168cff;
-    color:white;
-    text-decoration:none;
-    font-weight:900;
-    cursor:pointer;
-    box-shadow:0 8px 30px rgba(22,140,255,.3);
-    transition:.2s;
+display:inline-block;
+border:0;
+padding:15px 28px;
+border-radius:12px;
+background:#168cff;
+color:white;
+text-decoration:none;
+font-weight:900;
+cursor:pointer;
+box-shadow:0 8px 30px rgba(22,140,255,.3);
+transition:.2s
 }
 
 .mainBtn:hover{
-    transform:translateY(-3px);
-    background:#4eafff;
+transform:translateY(-3px);
+background:#4eafff
 }
 
-/* =========================
-   SECTIONS
-========================= */
+/* SECTIONS */
 
 section{
-    max-width:1300px;
-    margin:auto;
-    padding:85px 20px;
+max-width:1300px;
+margin:auto;
+padding:85px 20px
 }
 
 .sectionTitle{
-    font-size:40px;
-    font-weight:1000;
-    margin-bottom:8px;
+font-size:40px;
+font-weight:1000;
+margin-bottom:8px
 }
 
 .sectionSub{
-    color:#8995a8;
-    margin-bottom:35px;
-    font-size:16px;
+color:#8995a8;
+margin-bottom:35px
 }
 
-/* =========================
-   SEARCH
-========================= */
+/* SEARCH */
 
 .searchBox{
-    display:flex;
-    gap:10px;
-    margin-bottom:30px;
+display:flex;
+margin-bottom:30px
 }
 
 .searchBox input{
-    flex:1;
-    padding:15px 18px;
-    border-radius:12px;
-    border:1px solid #29344a;
-    background:#111725;
-    color:white;
-    outline:none;
-    font-size:16px;
+width:100%;
+padding:15px 18px;
+border-radius:12px;
+border:1px solid #29344a;
+background:#111725;
+color:white;
+outline:none;
+font-size:16px
 }
 
 .searchBox input:focus{
-    border-color:#168cff;
+border-color:#168cff
 }
 
-/* =========================
-   NEWS
-========================= */
+/* NEWS */
 
 .newsGrid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px
 }
 
 .card{
-    background:#111725;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:18px;
-    overflow:hidden;
-    transition:.25s;
+background:#111725;
+border:1px solid rgba(255,255,255,.08);
+border-radius:18px;
+overflow:hidden;
+transition:.25s
 }
 
 .card:hover{
-    transform:translateY(-7px);
-    border-color:#269aff;
-    box-shadow:0 18px 45px rgba(0,0,0,.35);
+transform:translateY(-7px);
+border-color:#269aff;
+box-shadow:0 18px 45px rgba(0,0,0,.35)
 }
 
 .newsImage{
-    height:220px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:75px;
-    background:
-    linear-gradient(135deg,#142b55,#168cff);
+height:220px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:75px;
+background:linear-gradient(135deg,#142b55,#168cff)
 }
 
-.cardContent{
-    padding:22px;
-}
+.cardContent{padding:22px}
 
 .tag{
-    display:inline-block;
-    padding:5px 9px;
-    border-radius:7px;
-    background:#168cff;
-    font-size:11px;
-    font-weight:900;
-    margin-bottom:10px;
+display:inline-block;
+padding:5px 9px;
+border-radius:7px;
+background:#168cff;
+font-size:11px;
+font-weight:900;
+margin-bottom:10px
 }
 
 .card h3{
-    font-size:23px;
-    margin-bottom:10px;
+font-size:23px;
+margin-bottom:10px
 }
 
 .card p{
-    color:#9ca8ba;
-    line-height:1.55;
+color:#9ca8ba;
+line-height:1.55
 }
 
 .readMore{
-    margin-top:18px;
-    border:0;
-    background:none;
-    color:#42a8ff;
-    font-weight:900;
-    cursor:pointer;
-    font-size:15px;
+margin-top:18px;
+border:0;
+background:none;
+color:#42a8ff;
+font-weight:900;
+cursor:pointer;
+font-size:15px
 }
 
-/* =========================
-   UPDATES
-========================= */
+/* UPDATES */
 
 .updateGrid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px
 }
 
 .update{
-    background:#111725;
-    border-radius:17px;
-    padding:25px;
-    border-left:5px solid #168cff;
+background:#111725;
+border-radius:17px;
+padding:25px;
+border-left:5px solid #168cff
 }
 
-.update h3{
-    margin-bottom:10px;
-}
+.update h3{margin-bottom:10px}
 
 .update p{
-    color:#9ca8ba;
-    line-height:1.55;
+color:#9ca8ba;
+line-height:1.55
 }
 
-/* =========================
-   COSMETICS
-========================= */
+/* COSMETICS */
 
 .cosmeticGrid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px
 }
 
-.cosmeticCard{
-    position:relative;
-}
+.cosmeticCard{position:relative}
 
 .cosmeticImage{
-    height:330px;
-    overflow:hidden;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:
-    radial-gradient(circle at 50% 15%,#315d9e,#111827 72%);
+height:330px;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+background:
+radial-gradient(circle at 50% 15%,#315d9e,#111827 72%)
 }
 
 .cosmeticImage img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    filter:drop-shadow(0 18px 22px rgba(0,0,0,.55));
-    transition:.3s;
+width:100%;
+height:100%;
+object-fit:contain;
+filter:drop-shadow(0 18px 22px rgba(0,0,0,.55));
+transition:.3s
 }
 
 .cosmeticCard:hover .cosmeticImage img{
-    transform:scale(1.07);
+transform:scale(1.07)
 }
 
-.cosmeticInfo{
-    padding:18px;
-}
+.cosmeticInfo{padding:18px}
 
-.cosmeticInfo h3{
-    font-size:21px;
-}
+.cosmeticInfo h3{font-size:21px}
 
 .type{
-    color:#8e9bad;
-    font-size:13px;
-    margin-top:5px;
+color:#8e9bad;
+font-size:13px;
+margin-top:5px
 }
 
 .price{
-    color:#ffd83d;
-    font-weight:900;
-    margin:10px 0 15px;
+color:#ffd83d;
+font-weight:900;
+margin:10px 0 15px
+}
+
+.specialFriend{
+display:none
 }
 
 .cosmeticBtn{
-    width:100%;
-    padding:11px;
-    border:0;
-    border-radius:9px;
-    background:#168cff;
-    color:white;
-    font-weight:900;
-    cursor:pointer;
-    transition:.2s;
+width:100%;
+padding:11px;
+border:0;
+border-radius:9px;
+background:#168cff;
+color:white;
+font-weight:900;
+cursor:pointer;
+transition:.2s
 }
 
 .cosmeticBtn:hover{
-    background:#49abff;
+background:#49abff
 }
 
-/* =========================
-   FAVORITE
-========================= */
+/* FAVORITES */
 
 .favorite{
-    position:absolute;
-    top:12px;
-    right:12px;
-    width:40px;
-    height:40px;
-    border:0;
-    border-radius:50%;
-    background:rgba(0,0,0,.65);
-    color:white;
-    font-size:19px;
-    cursor:pointer;
-    z-index:3;
+position:absolute;
+top:12px;
+right:12px;
+width:40px;
+height:40px;
+border:0;
+border-radius:50%;
+background:rgba(0,0,0,.65);
+color:white;
+font-size:19px;
+cursor:pointer;
+z-index:3
 }
 
-.favorite.active{
-    color:#ff4d75;
-}
+.favorite.active{color:#ff4d75}
 
-/* =========================
-   TOURNAMENT
-========================= */
+/* TOURNAMENTS */
 
 .tournamentGrid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px
 }
 
 .tournament{
-    background:
-    linear-gradient(145deg,#142c54,#111725);
-    border-radius:20px;
-    padding:28px;
-    border:1px solid rgba(255,255,255,.08);
+background:linear-gradient(145deg,#142c54,#111725);
+border-radius:20px;
+padding:28px;
+border:1px solid rgba(255,255,255,.08)
 }
 
 .tournament .date{
-    color:#42a8ff;
-    font-weight:900;
-    margin-bottom:10px;
+color:#42a8ff;
+font-weight:900;
+margin-bottom:10px
 }
 
 .tournament h3{
-    font-size:24px;
-    margin-bottom:10px;
+font-size:24px;
+margin-bottom:10px
 }
 
 .tournament p{
-    color:#9ca8ba;
-    line-height:1.5;
+color:#9ca8ba;
+line-height:1.5
 }
 
-/* =========================
-   BANNER
-========================= */
+/* BANNER */
 
 .banner{
-    padding:60px 30px;
-    text-align:center;
-    border-radius:25px;
-    background:
-    linear-gradient(120deg,#1267c9,#6722b8);
-    box-shadow:0 20px 70px rgba(0,0,0,.3);
+padding:60px 30px;
+text-align:center;
+border-radius:25px;
+background:linear-gradient(120deg,#1267c9,#6722b8);
+box-shadow:0 20px 70px rgba(0,0,0,.3)
 }
 
 .banner h2{
-    font-size:43px;
-    margin-bottom:12px;
+font-size:43px;
+margin-bottom:12px
 }
 
 .banner p{
-    color:#e1e8ff;
-    margin-bottom:25px;
+color:#e1e8ff;
+margin-bottom:25px
 }
 
-/* =========================
-   ABOUT
-========================= */
+/* ABOUT */
 
 .about{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:30px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px
 }
 
 .aboutBox{
-    background:#111725;
-    border-radius:20px;
-    padding:30px;
+background:#111725;
+border-radius:20px;
+padding:30px
 }
 
 .aboutBox h3{
-    font-size:27px;
-    margin-bottom:13px;
+font-size:27px;
+margin-bottom:13px
 }
 
 .aboutBox p{
-    color:#9ca8ba;
-    line-height:1.7;
+color:#9ca8ba;
+line-height:1.7
 }
 
-/* =========================
-   MODAL
-========================= */
+/* MODAL */
 
 .modal{
-    position:fixed;
-    inset:0;
-    z-index:3000;
-    background:rgba(0,0,0,.78);
-    backdrop-filter:blur(9px);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
+position:fixed;
+inset:0;
+z-index:3000;
+background:rgba(0,0,0,.8);
+backdrop-filter:blur(9px);
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px
 }
 
-.modal.show{
-    display:flex;
-}
+.modal.show{display:flex}
 
 .modalBox{
-    width:min(650px,100%);
-    background:#111725;
-    border-radius:22px;
-    overflow:hidden;
-    border:1px solid rgba(255,255,255,.15);
-    box-shadow:0 30px 100px #000;
-    position:relative;
+width:min(650px,100%);
+background:#111725;
+border-radius:22px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,.15);
+box-shadow:0 30px 100px #000;
+position:relative
 }
 
 .modalImage{
-    height:370px;
-    background:
-    radial-gradient(circle,#315b9b,#111725 72%);
-    display:flex;
-    align-items:center;
-    justify-content:center;
+height:370px;
+background:radial-gradient(circle,#315b9b,#111725 72%);
+display:flex;
+align-items:center;
+justify-content:center
 }
 
 .modalImage img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
+width:100%;
+height:100%;
+object-fit:contain
 }
 
-.modalText{
-    padding:25px;
-}
+.modalText{padding:28px}
 
 .modalText h2{
-    font-size:32px;
+font-size:32px;
+margin-bottom:10px
 }
 
 .modalText p{
-    color:#9ca8ba;
-    margin-top:8px;
+color:#9ca8ba;
+margin-top:8px;
+line-height:1.5
+}
+
+.specialMessage{
+display:none;
+margin:20px 0;
+padding:17px;
+border-radius:13px;
+background:linear-gradient(90deg,#1267c9,#6925c9);
+font-size:19px;
+font-weight:1000;
+text-align:center;
+box-shadow:0 8px 25px rgba(22,140,255,.25)
 }
 
 .close{
-    position:absolute;
-    top:12px;
-    right:12px;
-    width:42px;
-    height:42px;
-    border:0;
-    border-radius:50%;
-    background:rgba(0,0,0,.7);
-    color:white;
-    font-size:24px;
-    cursor:pointer;
-    z-index:4;
+position:absolute;
+top:12px;
+right:12px;
+width:42px;
+height:42px;
+border:0;
+border-radius:50%;
+background:rgba(0,0,0,.7);
+color:white;
+font-size:24px;
+cursor:pointer;
+z-index:4
 }
 
-/* =========================
-   NEWS MODAL
-========================= */
+/* NEWS MODAL */
 
-.newsModalContent{
-    padding:35px;
-}
+.newsModalContent{padding:35px}
 
 .newsModalContent h2{
-    font-size:34px;
-    margin-bottom:12px;
+font-size:34px;
+margin-bottom:12px
 }
 
 .newsModalContent p{
-    color:#aab5c7;
-    line-height:1.7;
-    margin-bottom:15px;
+color:#aab5c7;
+line-height:1.7;
+margin-bottom:20px
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
-    border-top:1px solid rgba(255,255,255,.08);
-    text-align:center;
-    padding:45px 20px;
-    color:#778296;
+border-top:1px solid rgba(255,255,255,.08);
+text-align:center;
+padding:45px 20px;
+color:#778296
 }
 
-/* =========================
-   LIGHT MODE
-========================= */
+/* LIGHT */
 
 .light header{
-    background:rgba(255,255,255,.9);
+background:rgba(255,255,255,.9)
 }
 
-.light nav a{
-    color:#222;
-}
+.light nav a{color:#222}
 
 .light .iconBtn{
-    background:#e4e8ee;
-    color:#111;
+background:#e4e8ee;
+color:#111
 }
 
 .light .card,
@@ -616,8 +559,8 @@ footer{
 .light .tournament,
 .light .aboutBox,
 .light .modalBox{
-    background:white;
-    border-color:#dce2eb;
+background:white;
+border-color:#dce2eb
 }
 
 .light .card p,
@@ -627,360 +570,300 @@ footer{
 .light .sectionSub,
 .light .type,
 .light .modalText p{
-    color:#667085;
+color:#667085
 }
 
 .light .searchBox input{
-    background:white;
-    color:#111;
+background:white;
+color:#111
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:1000px){
 
-    .cosmeticGrid{
-        grid-template-columns:repeat(2,1fr);
-    }
+.cosmeticGrid{
+grid-template-columns:repeat(2,1fr)
+}
 
-    .newsGrid,
-    .updateGrid,
-    .tournamentGrid{
-        grid-template-columns:1fr 1fr;
-    }
+.newsGrid,
+.updateGrid,
+.tournamentGrid{
+grid-template-columns:1fr 1fr
+}
+
 }
 
 @media(max-width:750px){
 
-    nav{
-        display:none;
-        position:absolute;
-        top:72px;
-        left:0;
-        width:100%;
-        background:#080b13;
-        padding:22px;
-        flex-direction:column;
-        align-items:flex-start;
-    }
+nav{
+display:none;
+position:absolute;
+top:72px;
+left:0;
+width:100%;
+background:#080b13;
+padding:22px;
+flex-direction:column;
+align-items:flex-start
+}
 
-    nav.open{
-        display:flex;
-    }
+nav.open{display:flex}
 
-    .menuBtn{
-        display:block;
-    }
+.menuBtn{display:block}
 
-    .newsGrid,
-    .updateGrid,
-    .tournamentGrid,
-    .about,
-    .cosmeticGrid{
-        grid-template-columns:1fr;
-    }
+.newsGrid,
+.updateGrid,
+.tournamentGrid,
+.about,
+.cosmeticGrid{
+grid-template-columns:1fr
+}
 
-    .hero{
-        min-height:620px;
-    }
+.hero{min-height:620px}
 
-    .hero h1{
-        font-size:55px;
-    }
+.hero h1{font-size:55px}
 
-    .sectionTitle{
-        font-size:32px;
-    }
+.sectionTitle{font-size:32px}
 
-    .banner h2{
-        font-size:30px;
-    }
+.banner h2{font-size:30px}
 
-    .cosmeticImage{
-        height:380px;
-    }
+.cosmeticImage{height:380px}
+
 }
 </style>
 </head>
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
 
 <div class="nav">
 
-    <div class="logo">
-        FN<span>PULSE</span>
-    </div>
+<div class="logo">
+FN<span>PULSE</span>
+</div>
 
-    <nav id="nav">
+<nav id="nav">
+<a href="#home">Home</a>
+<a href="#nieuws">Nieuws</a>
+<a href="#updates">Updates</a>
+<a href="#cosmetics">Cosmetics</a>
+<a href="#toernooien">Toernooien</a>
+<a href="#over">Over ons</a>
+</nav>
 
-        <a href="#home">Home</a>
-        <a href="#nieuws">Nieuws</a>
-        <a href="#updates">Updates</a>
-        <a href="#cosmetics">Cosmetics</a>
-        <a href="#toernooien">Toernooien</a>
-        <a href="#over">Over ons</a>
+<div class="navButtons">
 
-    </nav>
+<button class="iconBtn" id="themeBtn">
+☀️
+</button>
 
-    <div class="navButtons">
+<button class="iconBtn menuBtn" id="menuBtn">
+☰
+</button>
 
-        <button class="iconBtn" id="themeBtn">
-            ☀️
-        </button>
-
-        <button class="iconBtn menuBtn" id="menuBtn">
-            ☰
-        </button>
-
-    </div>
+</div>
 
 </div>
 
 </header>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
 <section class="hero" id="home">
 
 <div class="heroContent">
 
-    <div class="heroSmall">
-        FORTNITE COMMUNITY
-    </div>
+<div class="heroSmall">
+FORTNITE COMMUNITY
+</div>
 
-    <h1>
-        FORTNITE<br>
-        <span>NIEUWS</span>
-    </h1>
+<h1>
+FORTNITE<br>
+<span>NIEUWS</span>
+</h1>
 
-    <p>
-        Het laatste Fortnite-nieuws, updates, cosmetics,
-        evenementen en toernooien op één plek.
-    </p>
+<p>
+Het laatste Fortnite-nieuws, updates, cosmetics,
+evenementen en toernooien op één plek.
+</p>
 
-    <a href="#nieuws" class="mainBtn">
-        🚀 Bekijk het nieuws
-    </a>
+<a href="#nieuws" class="mainBtn">
+🚀 Bekijk het nieuws
+</a>
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     NIEUWS
-========================= -->
+<!-- NIEUWS -->
 
 <section id="nieuws">
 
 <h2 class="sectionTitle">
-    🔥 Laatste nieuws
+🔥 Laatste nieuws
 </h2>
 
 <p class="sectionSub">
-    Blijf op de hoogte van wat er gebeurt in Fortnite.
+Blijf op de hoogte van wat er gebeurt in Fortnite.
 </p>
 
 <div class="searchBox">
 
-    <input
-        id="searchInput"
-        type="text"
-        placeholder="🔎 Zoek nieuws..."
-    >
+<input
+id="searchInput"
+type="text"
+placeholder="🔎 Zoek nieuws..."
+>
 
 </div>
 
-<div class="newsGrid" id="newsGrid">
+<div class="newsGrid">
 
-    <article class="card newsCard"
-        data-search="kingdom hearts sora riku kairi roxas">
+<article class="card newsCard"
+data-search="kingdom hearts sora riku kairi roxas">
 
-        <div class="newsImage">
-            👑
-        </div>
+<div class="newsImage">👑</div>
 
-        <div class="cardContent">
+<div class="cardContent">
 
-            <span class="tag">
-                COLLAB
-            </span>
+<span class="tag">COLLAB</span>
 
-            <h3>
-                Kingdom Hearts komt naar Fortnite
-            </h3>
+<h3>
+Kingdom Hearts komt naar Fortnite
+</h3>
 
-            <p>
-                Sora, Riku, Kairi en Roxas zijn toegevoegd
-                aan Fortnite.
-            </p>
+<p>
+Sora, Riku, Kairi en Roxas zijn toegevoegd
+aan Fortnite.
+</p>
 
-            <button
-                class="readMore"
-                data-news="kingdom">
-                Lees meer →
-            </button>
+<button
+class="readMore"
+data-news="kingdom">
+Lees meer →
+</button>
 
-        </div>
-
-    </article>
+</div>
+</article>
 
 
-    <article class="card newsCard"
-        data-search="override seizoen nieuwe content">
+<article class="card newsCard"
+data-search="override seizoen nieuwe content">
 
-        <div class="newsImage">
-            ⚡
-        </div>
+<div class="newsImage">⚡</div>
 
-        <div class="cardContent">
+<div class="cardContent">
 
-            <span class="tag">
-                SEASON
-            </span>
+<span class="tag">SEASON</span>
 
-            <h3>
-                Fortnite Override
-            </h3>
+<h3>
+Fortnite Override
+</h3>
 
-            <p>
-                Ontdek de nieuwste content en veranderingen
-                in het huidige seizoen.
-            </p>
+<p>
+Ontdek de nieuwste content en veranderingen
+in het huidige seizoen.
+</p>
 
-            <button
-                class="readMore"
-                data-news="season">
-                Lees meer →
-            </button>
+<button
+class="readMore"
+data-news="season">
+Lees meer →
+</button>
 
-        </div>
-
-    </article>
+</div>
+</article>
 
 
-    <article class="card newsCard"
-        data-search="fncs tournament toernooi">
+<article class="card newsCard"
+data-search="fncs tournament toernooi">
 
-        <div class="newsImage">
-            🏆
-        </div>
+<div class="newsImage">🏆</div>
 
-        <div class="cardContent">
+<div class="cardContent">
 
-            <span class="tag">
-                COMPETITIVE
-            </span>
+<span class="tag">COMPETITIVE</span>
 
-            <h3>
-                Nieuwe competitieve evenementen
-            </h3>
+<h3>
+Nieuwe competitieve evenementen
+</h3>
 
-            <p>
-                Bekijk de nieuwste Fortnite-toernooien
-                en competitieve evenementen.
-            </p>
+<p>
+Bekijk de nieuwste Fortnite-toernooien
+en competitieve evenementen.
+</p>
 
-            <button
-                class="readMore"
-                data-news="competitive">
-                Lees meer →
-            </button>
+<button
+class="readMore"
+data-news="competitive">
+Lees meer →
+</button>
 
-        </div>
-
-    </article>
+</div>
+</article>
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     UPDATES
-========================= -->
+<!-- UPDATES -->
 
 <section id="updates">
 
 <h2 class="sectionTitle">
-    ⚡ Updates
+⚡ Updates
 </h2>
 
 <p class="sectionSub">
-    Belangrijke veranderingen en nieuwe content.
+Belangrijke veranderingen en nieuwe content.
 </p>
 
 <div class="updateGrid">
 
-    <div class="update">
+<div class="update">
+<h3>🗺️ Nieuwe content</h3>
+<p>
+Fortnite blijft nieuwe content toevoegen
+aan het eiland en verschillende spelmodi.
+</p>
+</div>
 
-        <h3>
-            🗺️ Nieuwe content
-        </h3>
+<div class="update">
+<h3>✨ Nieuwe cosmetics</h3>
+<p>
+Nieuwe outfits, pickaxes, emotes en andere
+cosmetics verschijnen regelmatig.
+</p>
+</div>
 
-        <p>
-            Fortnite blijft nieuwe content toevoegen
-            aan het eiland en verschillende spelmodi.
-        </p>
-
-    </div>
-
-
-    <div class="update">
-
-        <h3>
-            ✨ Nieuwe cosmetics
-        </h3>
-
-        <p>
-            Nieuwe outfits, pickaxes, emotes en andere
-            cosmetics verschijnen regelmatig.
-        </p>
-
-    </div>
-
-
-    <div class="update">
-
-        <h3>
-            🎮 Gameplay
-        </h3>
-
-        <p>
-            Houd de updates in de gaten voor nieuwe
-            gameplay-veranderingen.
-        </p>
-
-    </div>
+<div class="update">
+<h3>🎮 Gameplay</h3>
+<p>
+Houd de updates in de gaten voor nieuwe
+gameplay-veranderingen.
+</p>
+</div>
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     COSMETICS
-========================= -->
+<!-- COSMETICS -->
 
 <section id="cosmetics">
 
 <h2 class="sectionTitle">
-    ✨ Cosmetics van de week
+✨ Cosmetics van de week
 </h2>
 
 <p class="sectionSub">
-    Mijn favoriete items uit de huidige Fortnite-shop.
+Een paar favoriete Fortnite-cosmetics.
 </p>
 
 <div class="cosmeticGrid" id="cosmeticGrid"></div>
@@ -988,247 +871,237 @@ footer{
 </section>
 
 
-<!-- =========================
-     TOERNOOIEN
-========================= -->
+<!-- TOERNOOIEN -->
 
 <section id="toernooien">
 
 <h2 class="sectionTitle">
-    🏆 Toernooien
+🏆 Toernooien
 </h2>
 
 <p class="sectionSub">
-    Houd de competitieve Fortnite-scene in de gaten.
+Houd de competitieve Fortnite-scene in de gaten.
 </p>
 
 <div class="tournamentGrid">
 
-    <div class="tournament">
+<div class="tournament">
 
-        <div class="date">
-            SEPTEMBER 2026
-        </div>
+<div class="date">
+SEPTEMBER 2026
+</div>
 
-        <h3>
-            FNCS Global Championship
-        </h3>
+<h3>
+FNCS Global Championship
+</h3>
 
-        <p>
-            De Global Championship staat gepland voor
-            26 en 27 september 2026 in Antwerpen.
-        </p>
+<p>
+De Global Championship staat gepland voor
+26 en 27 september 2026 in Antwerpen.
+</p>
 
-    </div>
-
-
-    <div class="tournament">
-
-        <div class="date">
-            COMMUNITY
-        </div>
-
-        <h3>
-            Community Toernooi
-        </h3>
-
-        <p>
-            Een plek om toekomstige community-toernooien
-            en evenementen te verzamelen.
-        </p>
-
-    </div>
+</div>
 
 
-    <div class="tournament">
+<div class="tournament">
 
-        <div class="date">
-            COMPETITIVE
-        </div>
+<div class="date">
+COMMUNITY
+</div>
 
-        <h3>
-            Competitive Nieuws
-        </h3>
+<h3>
+Community Toernooi
+</h3>
 
-        <p>
-            Bekijk hier de nieuwste updates uit
-            de competitieve Fortnite-scene.
-        </p>
+<p>
+Een plek om toekomstige community-toernooien
+en evenementen te verzamelen.
+</p>
 
-    </div>
+</div>
+
+
+<div class="tournament">
+
+<div class="date">
+COMPETITIVE
+</div>
+
+<h3>
+Competitive Nieuws
+</h3>
+
+<p>
+Bekijk hier de nieuwste updates uit
+de competitieve Fortnite-scene.
+</p>
+
+</div>
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     BANNER
-========================= -->
+<!-- BANNER -->
 
 <section>
 
 <div class="banner">
 
-    <h2>
-        🔥 Blijf op de hoogte
-    </h2>
+<h2>
+🔥 Blijf op de hoogte
+</h2>
 
-    <p>
-        Alles over Fortnite op één website.
-    </p>
+<p>
+Alles over Fortnite op één website.
+</p>
 
-    <a href="#nieuws" class="mainBtn">
-        Bekijk het nieuws
-    </a>
+<a href="#nieuws" class="mainBtn">
+Bekijk het nieuws
+</a>
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     OVER ONS
-========================= -->
+<!-- OVER -->
 
 <section id="over">
 
 <h2 class="sectionTitle">
-    ℹ️ Over FN Pulse
+ℹ️ Over FN Pulse
 </h2>
 
 <p class="sectionSub">
-    Een Fortnite-fanwebsite voor nieuws en cosmetics.
+Een Fortnite-fanwebsite voor nieuws en cosmetics.
 </p>
 
 <div class="about">
 
-    <div class="aboutBox">
+<div class="aboutBox">
 
-        <h3>
-            🎮 Wat is FN Pulse?
-        </h3>
+<h3>
+🎮 Wat is FN Pulse?
+</h3>
 
-        <p>
-            FN Pulse is een fanwebsite waarop je
-            Fortnite-nieuws, updates, cosmetics en
-            competitieve evenementen kunt bekijken.
-        </p>
+<p>
+FN Pulse is een fanwebsite waarop je
+Fortnite-nieuws, updates, cosmetics en
+competitieve evenementen kunt bekijken.
+</p>
 
-    </div>
+</div>
 
 
-    <div class="aboutBox">
+<div class="aboutBox">
 
-        <h3>
-            📢 Contact
-        </h3>
+<h3>
+📢 Contact
+</h3>
 
-        <p>
-            Heb je een idee voor een nieuwsartikel,
-            cosmetic of nieuwe functie?
-            Dan kun je FN Pulse blijven volgen voor
-            nieuwe updates.
-        </p>
+<p>
+Heb je een idee voor een nieuwsartikel,
+cosmetic of nieuwe functie?
+Dan kun je FN Pulse blijven volgen voor
+nieuwe updates.
+</p>
 
-    </div>
+</div>
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
-    <p>
-        © 2026 FN Pulse
-    </p>
+<p>
+© 2026 FN Pulse
+</p>
 
-    <p style="margin-top:8px;">
-        Fanwebsite • Niet verbonden aan Epic Games.
-    </p>
+<p style="margin-top:8px">
+Fanwebsite • Niet verbonden aan Epic Games.
+</p>
 
 </footer>
 
 
-<!-- =========================
-     COSMETIC MODAL
-========================= -->
+<!-- COSMETIC MODAL -->
 
 <div class="modal" id="cosmeticModal">
 
 <div class="modalBox">
 
-    <button class="close" id="closeCosmetic">
-        ×
-    </button>
+<button class="close" id="closeCosmetic">
+×
+</button>
 
-    <div class="modalImage">
+<div class="modalImage">
 
-        <img
-            id="modalImg"
-            src=""
-            alt=""
-        >
+<img id="modalImg" src="" alt="">
 
-    </div>
+</div>
 
-    <div class="modalText">
+<div class="modalText">
 
-        <h2 id="modalTitle"></h2>
+<h2 id="modalTitle"></h2>
 
-        <p id="modalType"></p>
+<p id="modalType"></p>
 
-        <p id="modalPrice"></p>
+<p id="modalPrice"></p>
 
-        <br>
+<div
+class="specialMessage"
+id="specialMessage">
 
-        <button
-            class="cosmeticBtn"
-            id="closeCosmetic2">
-            Sluiten
-        </button>
+⭐ Deze zit er speciaal in voor mijn vriend! ❤️
 
-    </div>
+</div>
+
+<button
+class="cosmeticBtn"
+id="closeCosmetic2">
+
+Sluiten
+
+</button>
 
 </div>
 
 </div>
 
+</div>
 
-<!-- =========================
-     NEWS MODAL
-========================= -->
+
+<!-- NEWS MODAL -->
 
 <div class="modal" id="newsModal">
 
 <div class="modalBox">
 
-    <button class="close" id="closeNews">
-        ×
-    </button>
+<button class="close" id="closeNews">
+×
+</button>
 
-    <div class="newsModalContent">
+<div class="newsModalContent">
 
-        <span class="tag" id="newsModalTag">
-            NIEUWS
-        </span>
+<span class="tag" id="newsModalTag">
+NIEUWS
+</span>
 
-        <h2 id="newsModalTitle"></h2>
+<h2 id="newsModalTitle"></h2>
 
-        <p id="newsModalText"></p>
+<p id="newsModalText"></p>
 
-        <button
-            class="mainBtn"
-            id="closeNews2">
-            Sluiten
-        </button>
+<button
+class="mainBtn"
+id="closeNews2">
+Sluiten
+</button>
 
-    </div>
+</div>
 
 </div>
 
@@ -1237,9 +1110,7 @@ footer{
 
 <script>
 
-/* =========================
-   MENU
-========================= */
+/* MENU */
 
 const menuBtn =
 document.getElementById("menuBtn");
@@ -1248,46 +1119,34 @@ const nav =
 document.getElementById("nav");
 
 menuBtn.addEventListener("click",()=>{
+nav.classList.toggle("open");
+});
 
-    nav.classList.toggle("open");
-
+document.querySelectorAll("nav a").forEach(link=>{
+link.addEventListener("click",()=>{
+nav.classList.remove("open");
+});
 });
 
 
-document.querySelectorAll("nav a")
-.forEach(link=>{
-
-    link.addEventListener("click",()=>{
-
-        nav.classList.remove("open");
-
-    });
-
-});
-
-
-/* =========================
-   THEME
-========================= */
+/* THEME */
 
 const themeBtn =
 document.getElementById("themeBtn");
 
 themeBtn.addEventListener("click",()=>{
 
-    document.body.classList.toggle("light");
+document.body.classList.toggle("light");
 
-    themeBtn.textContent =
-        document.body.classList.contains("light")
-        ? "🌙"
-        : "☀️";
+themeBtn.textContent =
+document.body.classList.contains("light")
+? "🌙"
+: "☀️";
 
 });
 
 
-/* =========================
-   NEWS SEARCH
-========================= */
+/* SEARCH */
 
 const searchInput =
 document.getElementById("searchInput");
@@ -1297,112 +1156,79 @@ document.querySelectorAll(".newsCard");
 
 searchInput.addEventListener("input",()=>{
 
-    const search =
-        searchInput.value.toLowerCase();
+const search =
+searchInput.value.toLowerCase();
 
-    newsCards.forEach(card=>{
+newsCards.forEach(card=>{
 
-        const text =
-            card.dataset.search.toLowerCase();
+card.style.display =
+card.dataset.search
+.toLowerCase()
+.includes(search)
+? ""
+: "none";
 
-        card.style.display =
-            text.includes(search)
-            ? ""
-            : "none";
-
-    });
+});
 
 });
 
 
-/* =========================
-   NEWS READ MORE
-========================= */
+/* NEWS */
 
-const newsData = {
+const newsData={
 
-    kingdom:{
+kingdom:{
+tag:"COLLAB",
+title:"Kingdom Hearts in Fortnite",
+text:
+"De Kingdom Hearts-samenwerking is officieel in Fortnite verschenen. Sora, Riku, Kairi en Roxas zijn beschikbaar als outfits. De samenwerking bevat daarnaast verschillende bijbehorende cosmetics."
+},
 
-        tag:"COLLAB",
+season:{
+tag:"SEASON",
+title:"Fortnite Override",
+text:
+"Het huidige seizoen brengt nieuwe content en veranderingen naar Fortnite. Op FN Pulse kun je nieuwe updates, cosmetics en belangrijke aankondigingen verzamelen."
+},
 
-        title:
-        "Kingdom Hearts in Fortnite",
-
-        text:
-        "De Kingdom Hearts-samenwerking is officieel in Fortnite verschenen. Sora, Riku, Kairi en Roxas zijn beschikbaar als outfits. De samenwerking bevat daarnaast verschillende bijbehorende cosmetics. Epic noemt ook de Kingdom Key en Sea-Salt Ice Cream als onderdeel van de nieuwe content."
-
-    },
-
-    season:{
-
-        tag:"SEASON",
-
-        title:
-        "Fortnite Override",
-
-        text:
-        "Het huidige seizoen brengt nieuwe content en veranderingen naar Fortnite. Op FN Pulse kun je nieuwe updates, cosmetics en belangrijke aankondigingen verzamelen."
-
-    },
-
-    competitive:{
-
-        tag:"COMPETITIVE",
-
-        title:
-        "Fortnite Competitive",
-
-        text:
-        "De competitieve Fortnite-kalender bevat verschillende evenementen. De 2026 Global Championship staat gepland voor 26 en 27 september in Antwerpen."
-
-    }
+competitive:{
+tag:"COMPETITIVE",
+title:"Fortnite Competitive",
+text:
+"De competitieve Fortnite-kalender bevat verschillende evenementen. Bekijk FN Pulse voor nieuwe updates uit de competitieve scene."
+}
 
 };
-
 
 const newsModal =
 document.getElementById("newsModal");
 
-const newsModalTitle =
-document.getElementById("newsModalTitle");
+document.querySelectorAll(".readMore").forEach(button=>{
 
-const newsModalText =
-document.getElementById("newsModalText");
+button.addEventListener("click",()=>{
 
-const newsModalTag =
-document.getElementById("newsModalTag");
+const data =
+newsData[button.dataset.news];
 
+document.getElementById("newsModalTag")
+.textContent=data.tag;
 
-document.querySelectorAll(".readMore")
-.forEach(button=>{
+document.getElementById("newsModalTitle")
+.textContent=data.title;
 
-    button.addEventListener("click",()=>{
+document.getElementById("newsModalText")
+.textContent=data.text;
 
-        const data =
-            newsData[button.dataset.news];
+newsModal.classList.add("show");
 
-        newsModalTag.textContent =
-            data.tag;
-
-        newsModalTitle.textContent =
-            data.title;
-
-        newsModalText.textContent =
-            data.text;
-
-        newsModal.classList.add("show");
-
-    });
+});
 
 });
 
 
 function closeNews(){
-
-    newsModal.classList.remove("show");
-
+newsModal.classList.remove("show");
 }
-
 
 document.getElementById("closeNews")
 .addEventListener("click",closeNews);
@@ -1411,67 +1237,70 @@ document.getElementById("closeNews2")
 .addEventListener("click",closeNews);
 
 
-/* =========================
-   COSMETICS
-========================= */
+/* COSMETICS */
 
-const cosmetics = [
+const cosmetics=[
 
-    {
-        name:"Sora",
-        type:"Outfit",
-        price:"1.800 V-Bucks",
-        search:"Sora"
-    },
+{
+name:"Sora",
+type:"Outfit",
+price:"1.800 V-Bucks",
+search:"Sora"
+},
 
-    {
-        name:"Riku",
-        type:"Outfit",
-        price:"1.600 V-Bucks",
-        search:"Riku"
-    },
+{
+name:"Riku",
+type:"Outfit",
+price:"1.600 V-Bucks",
+search:"Riku"
+},
 
-    {
-        name:"Roxas",
-        type:"Outfit",
-        price:"1.600 V-Bucks",
-        search:"Roxas"
-    },
+{
+name:"Roxas",
+type:"Outfit",
+price:"1.600 V-Bucks",
+search:"Roxas"
+},
 
-    {
-        name:"Kairi",
-        type:"Outfit",
-        price:"1.600 V-Bucks",
-        search:"Kairi"
-    },
+/*
+   DEZE IS SPECIAAL VOOR JE VRIEND
+*/
 
-    {
-        name:"Keyblade",
-        type:"Pickaxe",
-        price:"800 V-Bucks",
-        search:"Keyblade"
-    },
+{
+name:"Default Skin",
+type:"Default Outfit",
+price:"Speciaal voor mijn vriend ❤️",
+search:"Default",
+friend:true
+},
 
-    {
-        name:"Soul Eater",
-        type:"Pickaxe",
-        price:"800 V-Bucks",
-        search:"Soul Eater"
-    },
+{
+name:"Keyblade",
+type:"Pickaxe",
+price:"800 V-Bucks",
+search:"Keyblade"
+},
 
-    {
-        name:"Destiny's Embrace",
-        type:"Pickaxe",
-        price:"800 V-Bucks",
-        search:"Destiny's Embrace"
-    },
+{
+name:"Soul Eater",
+type:"Pickaxe",
+price:"800 V-Bucks",
+search:"Soul Eater"
+},
 
-    {
-        name:"Sea-Salt Ice Cream",
-        type:"Back Bling",
-        price:"400 V-Bucks",
-        search:"Sea-Salt Ice Cream"
-    }
+{
+name:"Destiny's Embrace",
+type:"Pickaxe",
+price:"800 V-Bucks",
+search:"Destiny's Embrace"
+},
+
+{
+name:"Sea-Salt Ice Cream",
+type:"Back Bling",
+price:"400 V-Bucks",
+search:"Sea-Salt Ice Cream"
+}
 
 ];
 
@@ -1480,378 +1309,387 @@ const cosmeticGrid =
 document.getElementById("cosmeticGrid");
 
 
-/* =========================
+/*
    FALLBACK
-========================= */
+*/
 
 function fallbackImage(name){
 
-    return "data:image/svg+xml;charset=UTF-8,"+
-    encodeURIComponent(`
+return "data:image/svg+xml;charset=UTF-8,"+
+encodeURIComponent(`
 
-        <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="600"
-        height="600">
+<svg
+xmlns="http://www.w3.org/2000/svg"
+width="600"
+height="600">
 
-        <defs>
+<defs>
 
-        <linearGradient
-        id="g"
-        x1="0"
-        y1="0"
-        x2="1"
-        y2="1">
+<linearGradient
+id="g"
+x1="0"
+y1="0"
+x2="1"
+y2="1">
 
-        <stop
-        offset="0%"
-        stop-color="#168cff"/>
+<stop
+offset="0%"
+stop-color="#168cff"/>
 
-        <stop
-        offset="100%"
-        stop-color="#6825c9"/>
+<stop
+offset="100%"
+stop-color="#6925c9"/>
 
-        </linearGradient>
+</linearGradient>
 
-        </defs>
+</defs>
 
-        <rect
-        width="600"
-        height="600"
-        fill="url(#g)"/>
+<rect
+width="600"
+height="600"
+fill="url(#g)"/>
 
-        <text
-        x="50%"
-        y="48%"
-        text-anchor="middle"
-        fill="white"
-        font-family="Arial"
-        font-size="42"
-        font-weight="bold">
+<text
+x="50%"
+y="48%"
+text-anchor="middle"
+fill="white"
+font-family="Arial"
+font-size="40"
+font-weight="bold">
 
-        ${name}
+${name}
 
-        </text>
+</text>
 
-        <text
-        x="50%"
-        y="58%"
-        text-anchor="middle"
-        fill="#dceaff"
-        font-family="Arial"
-        font-size="22">
+<text
+x="50%"
+y="58%"
+text-anchor="middle"
+fill="#dceaff"
+font-family="Arial"
+font-size="22">
 
-        FORTNITE
+FORTNITE
 
-        </text>
+</text>
 
-        </svg>
+</svg>
 
-    `);
-
-}
-
-
-/* =========================
-   API
-========================= */
-
-async function getCosmeticImage(search){
-
-    try{
-
-        const url =
-        "https://fortnite-api.com/v2/cosmetics/br/search/all?name="+
-        encodeURIComponent(search)+
-        "&matchMethod=contains";
-
-        const response =
-            await fetch(url);
-
-        if(!response.ok)
-            throw new Error("API");
-
-        const result =
-            await response.json();
-
-        if(
-            result.data &&
-            result.data.length
-        ){
-
-            const item =
-                result.data[0];
-
-            if(item.images){
-
-                if(item.images.featured)
-                    return item.images.featured;
-
-                if(item.images.icon)
-                    return item.images.icon;
-
-            }
-
-        }
-
-    }catch(error){
-
-        console.log(
-            "Cosmetic niet gevonden:",
-            search
-        );
-
-    }
-
-    return fallbackImage(search);
+`);
 
 }
 
 
-/* =========================
-   FAVORITES
-========================= */
+/*
+   API AFBEELDING
+*/
+
+async function getCosmeticImage(item){
+
+try{
+
+/*
+   Voor de Default zoeken we specifiek
+   naar een echte default/Jonesy-afbeelding.
+*/
+
+let search=item.search;
+
+const url=
+"https://fortnite-api.com/v2/cosmetics/br/search/all?name="+
+encodeURIComponent(search)+
+"&matchMethod=contains";
+
+const response=
+await fetch(url);
+
+if(!response.ok)
+throw new Error("API");
+
+const result=
+await response.json();
+
+if(result.data && result.data.length){
+
+let found;
+
+if(item.friend){
+
+found=
+result.data.find(x=>
+(x.name||"").toLowerCase().includes("jonesy")
+) || result.data[0];
+
+}else{
+
+found=result.data[0];
+
+}
+
+if(found && found.images){
+
+if(found.images.featured)
+return found.images.featured;
+
+if(found.images.icon)
+return found.images.icon;
+
+}
+
+}
+
+}catch(error){
+
+console.log(
+"Afbeelding niet gevonden:",
+item.name
+);
+
+}
+
+return fallbackImage(item.name);
+
+}
+
+
+/*
+   FAVORITE KEY
+*/
 
 function favoriteKey(name){
-
-    return "favorite_"+name;
-
+return "favorite_"+name;
 }
 
 
-/* =========================
-   CREATE CARD
-========================= */
+/*
+   CARD
+*/
 
 function createCosmeticCard(item,image){
 
-    const card =
-        document.createElement("article");
+const card=
+document.createElement("article");
 
-    card.className =
-        "card cosmeticCard";
+card.className=
+"card cosmeticCard";
 
-    const saved =
-        localStorage.getItem(
-            favoriteKey(item.name)
-        ) === "true";
+const saved=
+localStorage.getItem(
+favoriteKey(item.name)
+)==="true";
 
-    card.innerHTML = `
+card.innerHTML=`
 
-        <button
-            class="favorite ${saved ? "active":""}"
-            title="Favoriet">
+<button
+class="favorite ${saved?"active":""}">
 
-            ${saved ? "♥":"♡"}
+${saved?"♥":"♡"}
 
-        </button>
+</button>
 
-        <div class="cosmeticImage">
+<div class="cosmeticImage">
 
-            <img
-                src="${image}"
-                alt="${item.name}"
-                onerror="this.src='${fallbackImage(item.name)}'"
-            >
+<img
+src="${image}"
+alt="${item.name}"
+onerror="this.src='${fallbackImage(item.name)}'">
 
-        </div>
+</div>
 
-        <div class="cosmeticInfo">
+<div class="cosmeticInfo">
 
-            <h3>
-                ${item.name}
-            </h3>
+<h3>
+${item.name}
+</h3>
 
-            <div class="type">
-                ${item.type}
-            </div>
+<div class="type">
+${item.type}
+</div>
 
-            <div class="price">
-                🟡 ${item.price}
-            </div>
+<div class="price">
+${item.friend ? "❤️" : "🟡"}
+${item.price}
+</div>
 
-            <button
-                class="cosmeticBtn">
+<button
+class="cosmeticBtn">
 
-                Bekijk ${item.name}
+Bekijk ${item.name}
 
-            </button>
+</button>
 
-        </div>
-    `;
-
-
-    /* favorite */
-
-    const favorite =
-        card.querySelector(".favorite");
-
-    favorite.addEventListener("click",()=>{
-
-        const active =
-            favorite.classList.toggle("active");
-
-        favorite.textContent =
-            active ? "♥":"♡";
-
-        localStorage.setItem(
-            favoriteKey(item.name),
-            active
-        );
-
-    });
+</div>
+`;
 
 
-    /* modal */
+/* FAVORITE */
 
-    card.querySelector(".cosmeticBtn")
-    .addEventListener("click",()=>{
+const favorite=
+card.querySelector(".favorite");
 
-        openCosmeticModal(item,image);
+favorite.addEventListener("click",()=>{
 
-    });
+const active=
+favorite.classList.toggle("active");
+
+favorite.textContent=
+active?"♥":"♡";
+
+localStorage.setItem(
+favoriteKey(item.name),
+active
+);
+
+});
 
 
-    cosmeticGrid.appendChild(card);
+/* BUTTON */
+
+card.querySelector(".cosmeticBtn")
+.addEventListener("click",()=>{
+
+openCosmeticModal(item,image);
+
+});
+
+
+cosmeticGrid.appendChild(card);
 
 }
 
 
-/* =========================
-   LOAD COSMETICS
-========================= */
+/*
+   LOAD
+*/
 
 async function loadCosmetics(){
 
-    cosmeticGrid.innerHTML="";
+cosmeticGrid.innerHTML="";
 
-    for(const item of cosmetics){
+for(const item of cosmetics){
 
-        const image =
-            await getCosmeticImage(
-                item.search
-            );
+const image=
+await getCosmeticImage(item);
 
-        createCosmeticCard(
-            item,
-            image
-        );
+createCosmeticCard(
+item,
+image
+);
 
-    }
+}
 
 }
 
 loadCosmetics();
 
 
-/* =========================
+/*
    COSMETIC MODAL
-========================= */
+*/
 
-const cosmeticModal =
+const cosmeticModal=
 document.getElementById("cosmeticModal");
 
-const modalImg =
+const modalImg=
 document.getElementById("modalImg");
 
-const modalTitle =
+const modalTitle=
 document.getElementById("modalTitle");
 
-const modalType =
+const modalType=
 document.getElementById("modalType");
 
-const modalPrice =
+const modalPrice=
 document.getElementById("modalPrice");
+
+const specialMessage=
+document.getElementById("specialMessage");
 
 
 function openCosmeticModal(item,image){
 
-    modalImg.src = image;
+modalImg.src=image;
 
-    modalTitle.textContent =
-        item.name;
+modalTitle.textContent=
+item.name;
 
-    modalType.textContent =
-        "Type: "+item.type;
+modalType.textContent=
+"Type: "+item.type;
 
-    modalPrice.textContent =
-        "Prijs: "+item.price;
+modalPrice.textContent=
+"Prijs: "+item.price;
 
-    cosmeticModal.classList.add("show");
+
+/*
+   ALLEEN DEFAULT KRIJGT
+   DE SPECIALE BOODSCHAP
+*/
+
+if(item.friend){
+
+specialMessage.style.display="block";
+
+}else{
+
+specialMessage.style.display="none";
+
+}
+
+cosmeticModal.classList.add("show");
 
 }
 
 
 function closeCosmeticModal(){
 
-    cosmeticModal.classList.remove("show");
+cosmeticModal.classList.remove("show");
 
 }
 
 
 document.getElementById("closeCosmetic")
 .addEventListener(
-    "click",
-    closeCosmeticModal
+"click",
+closeCosmeticModal
 );
-
 
 document.getElementById("closeCosmetic2")
 .addEventListener(
-    "click",
-    closeCosmeticModal
+"click",
+closeCosmeticModal
 );
 
 
-/* =========================
-   CLICK OUTSIDE
-========================= */
+/* CLICK OUTSIDE */
 
-cosmeticModal.addEventListener(
-    "click",
-    event=>{
+cosmeticModal.addEventListener("click",event=>{
 
-        if(event.target === cosmeticModal){
+if(event.target===cosmeticModal)
+closeCosmeticModal();
 
-            closeCosmeticModal();
+});
 
-        }
+newsModal.addEventListener("click",event=>{
 
-    }
-);
+if(event.target===newsModal)
+closeNews();
 
-
-newsModal.addEventListener(
-    "click",
-    event=>{
-
-        if(event.target === newsModal){
-
-            closeNews();
-
-        }
-
-    }
-);
+});
 
 
-/* =========================
-   ESCAPE
-========================= */
+/* ESCAPE */
 
-document.addEventListener(
-    "keydown",
-    event=>{
+document.addEventListener("keydown",event=>{
 
-        if(event.key==="Escape"){
+if(event.key==="Escape"){
 
-            closeCosmeticModal();
-            closeNews();
+closeCosmeticModal();
+closeNews();
 
-        }
+}
 
-    }
-);
+});
 
 </script>
 
