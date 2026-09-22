@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -14,23 +13,29 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #090b16;
+    font-family: Arial, sans-serif;
+    background: #080a14;
     color: white;
 }
 
-/* HEADER */
+/* NAVBAR */
 header {
-    background: linear-gradient(135deg, #171a3d, #31206b);
-    padding: 20px 7%;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 2px solid #5b4cff;
+    background: #101326;
+    border-bottom: 2px solid #675cff;
 }
 
 .navbar {
+    max-width: 1250px;
+    margin: auto;
+    padding: 18px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,71 +44,74 @@ header {
 .logo {
     font-size: 27px;
     font-weight: 900;
-    letter-spacing: 1px;
 }
 
 .logo span {
-    color: #6c63ff;
+    color: #7167ff;
 }
 
 nav {
     display: flex;
-    gap: 22px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.2s;
 }
 
 nav a:hover {
-    color: #7c72ff;
+    color: #8178ff;
 }
 
 /* HERO */
 .hero {
-    min-height: 480px;
+    min-height: 500px;
     display: flex;
     align-items: center;
-    padding: 70px 7%;
     background:
-        linear-gradient(90deg, rgba(8,9,22,0.95), rgba(8,9,22,0.35)),
-        linear-gradient(135deg, #272064, #101b43);
+        radial-gradient(circle at 80% 30%, #493ca0, transparent 35%),
+        linear-gradient(135deg, #151b42, #090b16);
 }
 
 .hero-content {
-    max-width: 700px;
+    max-width: 1250px;
+    width: 100%;
+    margin: auto;
+    padding: 70px 25px;
 }
 
 .hero h1 {
-    font-size: clamp(45px, 7vw, 85px);
-    line-height: 0.95;
+    font-size: clamp(50px, 8vw, 90px);
+    line-height: .9;
     margin-bottom: 25px;
 }
 
 .hero h1 span {
-    color: #7067ff;
+    color: #7066ff;
 }
 
 .hero p {
+    color: #c9cbda;
     font-size: 20px;
-    color: #d6d6e8;
+    max-width: 650px;
+    line-height: 1.5;
     margin-bottom: 30px;
 }
 
 .button {
     display: inline-block;
-    background: #6c63ff;
-    color: white;
-    padding: 15px 25px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
     border: none;
     cursor: pointer;
-    transition: 0.2s;
+    background: #6b61ff;
+    color: white;
+    padding: 13px 21px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: .2s;
 }
 
 .button:hover {
@@ -113,66 +121,68 @@ nav a:hover {
 
 /* SECTIONS */
 section {
-    padding: 60px 7%;
+    max-width: 1250px;
+    margin: auto;
+    padding: 70px 25px;
 }
 
-.section-title {
-    font-size: 35px;
+.title {
+    font-size: 38px;
     margin-bottom: 30px;
 }
 
-.section-title span {
-    color: #7067ff;
+.title span {
+    color: #7167ff;
 }
 
 /* NEWS */
 .news-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
 }
 
 .news-card {
-    background: #15182a;
+    background: #14172a;
     border: 1px solid #292d4b;
-    border-radius: 15px;
+    border-radius: 16px;
     overflow: hidden;
-    transition: 0.25s;
+    transition: .25s;
 }
 
 .news-card:hover {
-    transform: translateY(-7px);
-    border-color: #6c63ff;
+    transform: translateY(-6px);
+    border-color: #7066ff;
 }
 
 .news-image {
     height: 170px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 55px;
-    background: linear-gradient(135deg, #30226d, #1d315f);
+    justify-content: center;
+    font-size: 65px;
+    background: linear-gradient(135deg, #30276f, #172c57);
 }
 
 .news-content {
-    padding: 20px;
-}
-
-.news-content h3 {
-    font-size: 21px;
-    margin-bottom: 10px;
-}
-
-.news-content p {
-    color: #aaaec5;
-    line-height: 1.5;
-    margin-bottom: 15px;
+    padding: 22px;
 }
 
 .date {
-    color: #777cff;
+    color: #8178ff;
     font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.news-content h3 {
+    font-size: 22px;
     margin-bottom: 12px;
+}
+
+.news-content p {
+    color: #aeb1c5;
+    line-height: 1.5;
+    margin-bottom: 18px;
 }
 
 /* FEATURES */
@@ -183,14 +193,14 @@ section {
 }
 
 .feature {
-    background: #121526;
-    padding: 30px;
+    background: #131628;
+    border: 1px solid #292d4b;
     border-radius: 15px;
-    border: 1px solid #282c48;
+    padding: 28px;
 }
 
-.feature .icon {
-    font-size: 40px;
+.feature-icon {
+    font-size: 42px;
     margin-bottom: 15px;
 }
 
@@ -199,44 +209,99 @@ section {
 }
 
 .feature p {
-    color: #aeb1c7;
+    color: #aaadbf;
     line-height: 1.5;
 }
 
 /* CONTACT */
 .contact {
-    background: linear-gradient(135deg, #171a3d, #25184f);
+    max-width: none;
     text-align: center;
+    background: linear-gradient(135deg, #151940, #24144b);
 }
 
 .contact p {
-    color: #c7c8d8;
-    margin: 15px 0 25px;
-    font-size: 18px;
+    color: #c7c9d7;
+    margin: 12px 0;
 }
 
 .email {
-    color: #8179ff;
+    color: #8279ff;
     font-weight: bold;
-    margin-bottom: 25px;
+    margin: 20px 0;
 }
 
 /* FOOTER */
 footer {
     text-align: center;
     padding: 30px;
-    background: #060710;
-    color: #777b93;
-    font-size: 14px;
+    background: #05060c;
+    color: #777b91;
 }
 
 .disclaimer {
-    margin-top: 10px;
     font-size: 12px;
+    margin-top: 8px;
 }
 
-/* MOBILE */
-@media(max-width: 700px) {
+/* ARTIKELVENSTER */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,.85);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-box {
+    position: relative;
+    width: 100%;
+    max-width: 750px;
+    max-height: 85vh;
+    overflow-y: auto;
+    background: #15182b;
+    border: 2px solid #7066ff;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 0 50px rgba(112,102,255,.3);
+}
+
+.modal-box h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.modal-box p {
+    color: #c5c8d8;
+    line-height: 1.7;
+    margin-top: 16px;
+}
+
+.modal-date {
+    color: #8178ff;
+    margin-bottom: 12px;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #8279ff;
+}
+
+/* MOBIEL */
+@media (max-width: 700px) {
 
     .navbar {
         flex-direction: column;
@@ -244,9 +309,7 @@ footer {
     }
 
     nav {
-        flex-wrap: wrap;
         justify-content: center;
-        gap: 12px;
     }
 
     .hero {
@@ -254,7 +317,11 @@ footer {
     }
 
     .hero h1 {
-        font-size: 50px;
+        font-size: 55px;
+    }
+
+    .modal-box {
+        padding: 28px 20px;
     }
 }
 </style>
@@ -282,8 +349,8 @@ footer {
 </header>
 
 
-<!-- HERO -->
-<section class="hero" id="home">
+<!-- HOME -->
+<div class="hero" id="home">
 
     <div class="hero-content">
 
@@ -293,48 +360,52 @@ footer {
         </h1>
 
         <p>
-            Het laatste Fortnite-nieuws, updates, items,
-            toernooien en meer op één plek.
+            Jouw plek voor Fortnite-nieuws, updates,
+            items, toernooien en meer.
         </p>
 
         <a href="#nieuws" class="button">
-            Bekijk het nieuws
+            Bekijk het laatste nieuws
         </a>
 
     </div>
 
-</section>
+</div>
 
 
 <!-- NIEUWS -->
 <section id="nieuws">
 
-    <h2 class="section-title">
-        Laatste <span>Nieuws</span>
+    <h2 class="title">
+        Laatste <span>Fortnite Nieuws</span>
     </h2>
 
     <div class="news-grid">
 
+        <!-- ARTIKEL 1 -->
         <article class="news-card">
 
-            <div class="news-image">📰</div>
+            <div class="news-image">
+                ⚡
+            </div>
 
             <div class="news-content">
 
                 <div class="date">
-                    22 september 2026
+                    17 september 2026
                 </div>
 
                 <h3>
-                    Nieuwe Fortnite-update onderweg
+                    Fortnite v42.20 uitgebracht
                 </h3>
 
                 <p>
-                    Bekijk de nieuwste veranderingen,
-                    features en content die naar Fortnite komen.
+                    Lees meer over de nieuwste Fortnite-update.
                 </p>
 
-                <button class="button" onclick="leesArtikel('update')">
+                <button
+                    class="button"
+                    onclick="leesArtikel('update')">
                     Lees meer
                 </button>
 
@@ -343,26 +414,30 @@ footer {
         </article>
 
 
+        <!-- ARTIKEL 2 -->
         <article class="news-card">
 
-            <div class="news-image">🎮</div>
+            <div class="news-image">
+                🎮
+            </div>
 
             <div class="news-content">
 
                 <div class="date">
-                    21 september 2026
+                    17 september 2026
                 </div>
 
                 <h3>
-                    Nieuwe items gespot
+                    KINGDOM HEARTS komt naar Fortnite
                 </h3>
 
                 <p>
-                    Ontdek welke nieuwe items en cosmetische
-                    content binnenkort kunnen verschijnen.
+                    Bekijk de samenwerking met KINGDOM HEARTS.
                 </p>
 
-                <button class="button" onclick="leesArtikel('items')">
+                <button
+                    class="button"
+                    onclick="leesArtikel('kingdom')">
                     Lees meer
                 </button>
 
@@ -371,26 +446,30 @@ footer {
         </article>
 
 
+        <!-- ARTIKEL 3 -->
         <article class="news-card">
 
-            <div class="news-image">🏆</div>
+            <div class="news-image">
+                🏆
+            </div>
 
             <div class="news-content">
 
                 <div class="date">
-                    20 september 2026
+                    26–27 september 2026
                 </div>
 
                 <h3>
-                    Fortnite toernooien
+                    Global Championship in Antwerpen
                 </h3>
 
                 <p>
-                    Bekijk nieuws en informatie over
-                    Fortnite-competities en toernooien.
+                    Het grote competitieve Fortnite-event.
                 </p>
 
-                <button class="button" onclick="leesArtikel('toernooi')">
+                <button
+                    class="button"
+                    onclick="leesArtikel('championship')">
                     Lees meer
                 </button>
 
@@ -406,45 +485,42 @@ footer {
 <!-- UPDATES -->
 <section id="updates">
 
-    <h2 class="section-title">
+    <h2 class="title">
         Fortnite <span>Updates</span>
     </h2>
 
     <div class="features">
 
         <div class="feature">
-            <div class="icon">⚡</div>
+            <div class="feature-icon">⚡</div>
             <h3>Nieuwe updates</h3>
             <p>
-                Houd nieuwe Fortnite-updates en veranderingen
-                in de gaten.
+                Bekijk nieuws over nieuwe Fortnite-updates
+                en veranderingen.
             </p>
         </div>
 
         <div class="feature">
-            <div class="icon">🗺️</div>
+            <div class="feature-icon">🗺️</div>
             <h3>Battle Royale</h3>
             <p>
-                Nieuws over de Battle Royale-modus,
-                maps en gameplay.
+                Nieuws over Battle Royale, maps en gameplay.
             </p>
         </div>
 
         <div class="feature">
-            <div class="icon">🛠️</div>
+            <div class="feature-icon">🛠️</div>
             <h3>Creative</h3>
             <p>
-                Ontdek Creative-nieuws, maps en nieuwe
-                mogelijkheden.
+                Ontdek nieuws over Creative en UEFN.
             </p>
         </div>
 
         <div class="feature">
-            <div class="icon">🏆</div>
-            <h3>Toernooien</h3>
+            <div class="feature-icon">🏆</div>
+            <h3>Competitive</h3>
             <p>
-                Blijf op de hoogte van Fortnite
-                competities en events.
+                Blijf op de hoogte van competitief Fortnite.
             </p>
         </div>
 
@@ -456,22 +532,22 @@ footer {
 <!-- ITEMS -->
 <section id="items">
 
-    <h2 class="section-title">
+    <h2 class="title">
         Items & <span>Skins</span>
     </h2>
 
     <div class="features">
 
         <div class="feature">
-            <div class="icon">👕</div>
+            <div class="feature-icon">👕</div>
             <h3>Skins</h3>
             <p>
-                Nieuws over nieuwe en terugkerende skins.
+                Nieuws over Fortnite Outfits en cosmetische items.
             </p>
         </div>
 
         <div class="feature">
-            <div class="icon">⛏️</div>
+            <div class="feature-icon">⛏️</div>
             <h3>Pickaxes</h3>
             <p>
                 Bekijk nieuws over nieuwe pickaxes.
@@ -479,10 +555,10 @@ footer {
         </div>
 
         <div class="feature">
-            <div class="icon">🪂</div>
+            <div class="feature-icon">🪂</div>
             <h3>Gliders</h3>
             <p>
-                Ontdek nieuwe gliders en cosmetische items.
+                Ontdek nieuwe gliders en andere cosmetics.
             </p>
         </div>
 
@@ -494,19 +570,19 @@ footer {
 <!-- TOERNOOIEN -->
 <section id="toernooien">
 
-    <h2 class="section-title">
+    <h2 class="title">
         Fortnite <span>Toernooien</span>
     </h2>
 
     <div class="feature">
 
-        <div class="icon">🏆</div>
+        <div class="feature-icon">🏆</div>
 
-        <h3>Competitive Fortnite</h3>
+        <h3>Fortnite Global Championship</h3>
 
         <p>
-            Op deze website kun je later informatie toevoegen
-            over toernooien, cups en andere Fortnite-events.
+            Hier kun je later een volledige kalender
+            met Fortnite-toernooien toevoegen.
         </p>
 
     </div>
@@ -517,12 +593,12 @@ footer {
 <!-- CONTACT -->
 <section class="contact" id="contact">
 
-    <h2 class="section-title">
+    <h2 class="title">
         Contact
     </h2>
 
     <p>
-        Heb je een vraag, idee of wil je contact opnemen?
+        Heb je een vraag, idee of nieuws-tip?
     </p>
 
     <div class="email">
@@ -531,8 +607,7 @@ footer {
 
     <a
         class="button"
-        href="mailto:thijsscherders@outlook.com"
-    >
+        href="mailto:thijsscherders@outlook.com">
         Stuur een e-mail
     </a>
 
@@ -552,112 +627,23 @@ footer {
 </footer>
 
 
-function leesArtikel(type) {
-
-    if (type === "update") {
-
-        alert(
-            "FORTNITE UPDATE\n\n" +
-            "Hier kun je later het volledige nieuwsartikel " +
-            "over een Fortnite-update plaatsen."
-        );
-
-    }
-
-    if (type === "items") {
-
-        alert(
-            "NIEUWE ITEMS\n\n" +
-            "Hier kun je later informatie over nieuwe " +
-            "Fortnite-items en skins plaatsen."
-        );
-
-    }
-
-    if (type === "toernooi") {
-
-        alert(
-            "FORTNITE TOERNOOIEN\n\n" +
-            "Hier kun je later informatie over Fortnite-" +
-            "toernooien en competities plaatsen."
-        );
-
-    }
-
-}
-
-</script>
-
-</body>
-</html>
-```
-<!-- NIEUWS ARTIKEL VENSTER -->
+<!-- ARTIKELVENSTER -->
 <div id="articleModal" class="modal">
+
     <div class="modal-box">
 
-        <button class="close" onclick="sluitArtikel()">×</button>
+        <button
+            class="close"
+            onclick="sluitArtikel()">
+            ×
+        </button>
 
         <div id="articleContent"></div>
 
     </div>
+
 </div>
 
-<style>
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.8);
-    z-index: 5000;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.modal-box {
-    background: #15182a;
-    border: 2px solid #6c63ff;
-    border-radius: 18px;
-    width: 100%;
-    max-width: 700px;
-    max-height: 85vh;
-    overflow-y: auto;
-    padding: 35px;
-    position: relative;
-    box-shadow: 0 0 40px rgba(108,99,255,0.3);
-}
-
-.modal-box h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.modal-box p {
-    color: #c5c7d8;
-    line-height: 1.7;
-    margin-top: 15px;
-}
-
-.close {
-    position: absolute;
-    right: 18px;
-    top: 12px;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 35px;
-    cursor: pointer;
-}
-
-.close:hover {
-    color: #8179ff;
-}
-
-.article-date {
-    color: #8179ff;
-    font-size: 14px;
-}
-</style>
 
 <script>
 
@@ -669,79 +655,101 @@ function leesArtikel(type) {
     if (type === "update") {
 
         content.innerHTML = `
-            <div class="article-date">22 september 2026</div>
+            <div class="modal-date">
+                17 september 2026
+            </div>
 
-            <h2>Nieuwe Fortnite-update onderweg</h2>
+            <h2>
+                Fortnite v42.20 uitgebracht
+            </h2>
 
             <p>
-                Fortnite blijft veranderen met nieuwe updates,
-                gameplay-veranderingen en nieuwe content.
+                Epic Games heeft Fortnite v42.20 uitgebracht
+                op 17 september 2026.
             </p>
 
             <p>
-                Op Fortnite Central verzamelen we het laatste
-                nieuws over updates, nieuwe features en andere
-                belangrijke veranderingen.
+                De update brengt nieuwe content en
+                veranderingen naar Fortnite.
             </p>
 
             <p>
-                Houd deze pagina in de gaten voor meer nieuws
-                zodra er nieuwe informatie beschikbaar is.
+                Ook zijn er veranderingen en nieuwe
+                mogelijkheden voor makers in Creative en UEFN.
+            </p>
+
+            <p>
+                Dit artikel is gebaseerd op informatie van
+                officiële Fortnite-bronnen.
             </p>
         `;
-
     }
 
-    if (type === "items") {
+
+    if (type === "kingdom") {
 
         content.innerHTML = `
-            <div class="article-date">21 september 2026</div>
+            <div class="modal-date">
+                17 september 2026
+            </div>
 
-            <h2>Nieuwe items gespot</h2>
+            <h2>
+                KINGDOM HEARTS komt naar Fortnite
+            </h2>
 
             <p>
-                Er zijn nieuwe Fortnite-items en cosmetische
-                content opgedoken.
+                KINGDOM HEARTS is naar Fortnite gekomen
+                met een speciale samenwerking.
             </p>
 
             <p>
-                Op Fortnite Central kun je binnenkort een
-                overzicht bekijken van skins, pickaxes,
-                gliders en andere cosmetische items.
+                Sora, Riku, Kairi en Roxas zijn onderdeel
+                van de samenwerking.
             </p>
 
             <p>
-                Kom regelmatig terug om nieuwe items te
-                ontdekken.
+                Er is daarnaast speciale KINGDOM HEARTS-
+                content toegevoegd aan Fortnite.
+            </p>
+
+            <p>
+                Bron: officiële Fortnite News.
             </p>
         `;
-
     }
 
-    if (type === "toernooi") {
+
+    if (type === "championship") {
 
         content.innerHTML = `
-            <div class="article-date">20 september 2026</div>
+            <div class="modal-date">
+                26–27 september 2026
+            </div>
 
-            <h2>Fortnite toernooien</h2>
+            <h2>
+                Fortnite Global Championship in Antwerpen
+            </h2>
 
             <p>
-                Fortnite heeft een grote competitive community.
-                Op Fortnite Central verzamelen we nieuws over
-                toernooien en competities.
+                De Fortnite Global Championship 2026
+                vindt plaats op 26 en 27 september
+                in Antwerpen, België.
             </p>
 
             <p>
-                Later kunnen we hier ook een volledige
-                toernooienkalender toevoegen.
+                Spelers uit verschillende regio's komen
+                samen voor dit grote competitieve Fortnite-event.
             </p>
 
             <p>
-                Houd de website in de gaten voor nieuwe
-                informatie.
+                Het evenement maakt deel uit van de officiële
+                Fortnite Competitive-scene.
+            </p>
+
+            <p>
+                Bron: officiële Fortnite Competitive-informatie.
             </p>
         `;
-
     }
 
     modal.style.display = "flex";
@@ -749,11 +757,13 @@ function leesArtikel(type) {
 
 
 function sluitArtikel() {
+
     document.getElementById("articleModal").style.display = "none";
+
 }
 
 
-window.onclick = function(event) {
+window.addEventListener("click", function(event) {
 
     const modal = document.getElementById("articleModal");
 
@@ -761,73 +771,18 @@ window.onclick = function(event) {
         sluitArtikel();
     }
 
-};
-<!-- NIEUWSVENSTER -->
-<div id="articleModal" class="modal">
-    <div class="modal-box">
+});
 
-        <button class="close" onclick="sluitArtikel()">×</button>
 
-        <div id="articleContent"></div>
+document.addEventListener("keydown", function(event) {
 
-    </div>
-</div>
+    if (event.key === "Escape") {
+        sluitArtikel();
+    }
 
-<style>
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.85);
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
+});
 
-.modal-box {
-    position: relative;
-    width: 100%;
-    max-width: 700px;
-    max-height: 85vh;
-    overflow-y: auto;
-    padding: 35px;
-    background: #15182a;
-    border: 2px solid #6c63ff;
-    border-radius: 18px;
-    color: white;
-}
-
-.modal-box h2 {
-    margin-bottom: 10px;
-    font-size: 32px;
-}
-
-.modal-box p {
-    color: #c8cada;
-    line-height: 1.7;
-    margin-top: 15px;
-}
-
-.close {
-    position: absolute;
-    right: 15px;
-    top: 10px;
-    border: none;
-    background: transparent;
-    color: white;
-    font-size: 35px;
-    cursor: pointer;
-}
-
-.close:hover {
-    color: #8179ff;
-}
-
-.article-date {
-    color: #8179ff;
-    margin-bottom: 10px;
-}
-</style>
-    
 </script>
+
+</body>
+</html>
