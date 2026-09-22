@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poll uitslagen</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #eef4ff, #ffffff);
+    color: #222;
+}
+
+header {
+    background: #1769ff;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    box-shadow: 0 3px 10px #0002;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.container {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 20px #0002;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.result {
+    margin: 22px 0;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.bar {
+    width: 100%;
+    height: 28px;
+    background: #e7e7e7;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    background: linear-gradient(90deg, #1769ff, #49a0ff);
+    border-radius: 20px;
+    transition: width 0.5s;
+}
+
+.total {
+    text-align: center;
+    color: #666;
+    margin-top: 25px;
+}
+
+.empty {
+    text-align: center;
+    padding: 50px 20px;
+    color: #777;
+}
+
+button {
+    border: none;
+    background: #1769ff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #0d55d8;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>📊 Poll uitslagen</h1>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2 id="pollVraag">Poll</h2>
+
+        <div id="uitslagen"></div>
+
+        <div class="total">
+            Totaal aantal stemmen: <strong id="totaal">0</strong>
+        </div>
+    </div>
+
+    <div style="text-align:center;">
+        <button onclick="laden()">🔄 Uitslagen vernieuwen</button>
+    </div>
+
+</div>
+
+<script>
+
+function laden() {
+
+    /*
+      De uitslagen worden opgeslagen als:
+      
+      {
+        "optie 1": 10,
+        "optie 2": 5,
+        "optie 3": 2
+      }
+
+      Pas hieronder de namen aan als jouw poll
+      andere antwoordmogelijkheden heeft.
+    */
+
+    const standaardUitslagen = {
+        "Optie 1": 0,
+        "Optie 2": 0,
+        "Optie 3": 0
+    };
+
+    let opgeslagen = localStorage.getItem("pollUitslagen");
+
+    let stemmen;
+
+    if (opgeslagen) {
+        try {
+            stemmen = JSON.parse(opgeslagen);
+        } catch {
+            stemmen = standaardUitslagen;
+        }
+    } else {
+        stemmen = standaardUitslagen;
+    }
+
+    const vraag =
+        localStorage.getItem("pollVraag") ||
+        "Wat vind jij?";
+
+    document.getElementById("pollVraag").textContent = vraag;
+
+    const container = document.getElementById("uitslagen");
+
+    container.innerHTML = "";
+
+    let totaal = 0;
+
+    Object.values(stemmen).forEach(aantal => {
+        totaal += Number(aantal);
+    });
+
+    document.getElementById("totaal").textContent = totaal;
+
+    for (const optie in stemmen) {
+
+        const aantal = Number(stemmen[optie]);
+
+        let percentage = 0;
+
+        if (totaal > 0) {
+            percentage = (aantal / totaal) * 100;
+        }
+
+        const resultaat = document.createElement("div");
+        resultaat.className = "result";
+
+        resultaat.innerHTML = `
+            <div class="top">
+                <span>${optie}</span>
+                <span>${aantal} stemmen (${percentage.toFixed(1)}%)</span>
+            </div>
+
+            <div class="bar">
+                <div class="fill" style="width:${percentage}%"></div>
+            </div>
+        `;
+
+        container.appendChild(resultaat);
+    }
+}
+
+laden();
+
+</script>
+
+</body>
+</html>
