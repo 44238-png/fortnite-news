@@ -552,8 +552,6 @@ footer {
 </footer>
 
 
-<script>
-
 function leesArtikel(type) {
 
     if (type === "update") {
@@ -593,3 +591,176 @@ function leesArtikel(type) {
 </body>
 </html>
 ```
+<!-- NIEUWS ARTIKEL VENSTER -->
+<div id="articleModal" class="modal">
+    <div class="modal-box">
+
+        <button class="close" onclick="sluitArtikel()">×</button>
+
+        <div id="articleContent"></div>
+
+    </div>
+</div>
+
+<style>
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 5000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-box {
+    background: #15182a;
+    border: 2px solid #6c63ff;
+    border-radius: 18px;
+    width: 100%;
+    max-width: 700px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 35px;
+    position: relative;
+    box-shadow: 0 0 40px rgba(108,99,255,0.3);
+}
+
+.modal-box h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.modal-box p {
+    color: #c5c7d8;
+    line-height: 1.7;
+    margin-top: 15px;
+}
+
+.close {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #8179ff;
+}
+
+.article-date {
+    color: #8179ff;
+    font-size: 14px;
+}
+</style>
+
+<script>
+
+function leesArtikel(type) {
+
+    const modal = document.getElementById("articleModal");
+    const content = document.getElementById("articleContent");
+
+    if (type === "update") {
+
+        content.innerHTML = `
+            <div class="article-date">22 september 2026</div>
+
+            <h2>Nieuwe Fortnite-update onderweg</h2>
+
+            <p>
+                Fortnite blijft veranderen met nieuwe updates,
+                gameplay-veranderingen en nieuwe content.
+            </p>
+
+            <p>
+                Op Fortnite Central verzamelen we het laatste
+                nieuws over updates, nieuwe features en andere
+                belangrijke veranderingen.
+            </p>
+
+            <p>
+                Houd deze pagina in de gaten voor meer nieuws
+                zodra er nieuwe informatie beschikbaar is.
+            </p>
+        `;
+
+    }
+
+    if (type === "items") {
+
+        content.innerHTML = `
+            <div class="article-date">21 september 2026</div>
+
+            <h2>Nieuwe items gespot</h2>
+
+            <p>
+                Er zijn nieuwe Fortnite-items en cosmetische
+                content opgedoken.
+            </p>
+
+            <p>
+                Op Fortnite Central kun je binnenkort een
+                overzicht bekijken van skins, pickaxes,
+                gliders en andere cosmetische items.
+            </p>
+
+            <p>
+                Kom regelmatig terug om nieuwe items te
+                ontdekken.
+            </p>
+        `;
+
+    }
+
+    if (type === "toernooi") {
+
+        content.innerHTML = `
+            <div class="article-date">20 september 2026</div>
+
+            <h2>Fortnite toernooien</h2>
+
+            <p>
+                Fortnite heeft een grote competitive community.
+                Op Fortnite Central verzamelen we nieuws over
+                toernooien en competities.
+            </p>
+
+            <p>
+                Later kunnen we hier ook een volledige
+                toernooienkalender toevoegen.
+            </p>
+
+            <p>
+                Houd de website in de gaten voor nieuwe
+                informatie.
+            </p>
+        `;
+
+    }
+
+    modal.style.display = "flex";
+}
+
+
+function sluitArtikel() {
+    document.getElementById("articleModal").style.display = "none";
+}
+
+
+window.onclick = function(event) {
+
+    const modal = document.getElementById("articleModal");
+
+    if (event.target === modal) {
+        sluitArtikel();
+    }
+
+};
+
+</script>
